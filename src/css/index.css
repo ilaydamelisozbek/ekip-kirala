@@ -8,4 +8,10 @@
     display: flex;
     justify-content: center;
     color: #344767;
+    display: flex;
+    gap: 10px; 
+}
+.resim{
+  margin-right: 20px;
+  justify-content: center;
 }

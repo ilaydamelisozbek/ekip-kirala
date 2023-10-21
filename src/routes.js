@@ -99,7 +99,7 @@ const routes = [
           {
             name: "Fotoğraf",
             onClick: function navigate() {
-              navigatePage("ekipler");
+              navigatePage("mehteresim");
             },
             //route: "/pages/landing-pages/about-us",
             //component: <AboutUs />,
@@ -107,7 +107,7 @@ const routes = [
           {
             name: "Video",
             onClick: function navigate() {
-              navigatePage("ekipler");
+              navigatePage("mehtervideo");
             },
             /* route: "/pages/landing-pages/contact-us",
             component: <ContactUs />, */

@@ -51,7 +51,14 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/mehter1.jpg";
 
 import mehter2 from "assets/images/ekipKirala/mehter2.jpg";
-
+import mehterKonser from "assets/images/ekipKirala/mehterKonser.jpg";
+import mehterKonser3 from "assets/images/ekipKirala/mehterKonser3.jpg";
+import mehterKonser4 from "assets/images/ekipKirala/mehterKonser4.jpg";
+import mehterKonser5 from "assets/images/ekipKirala/mehterKonser5.jpg";
+import mehterKonser6 from "assets/images/ekipKirala/mehterKonser6.jpg";
+import mehterKonser7 from "assets/images/ekipKirala/mehterKonser7.jpg";
+import mehterKonser8 from "assets/images/ekipKirala/mehterKonser8.jpg";
+import MehterVideo1 from "assets/images/ekipKirala/MehterVideo1.mp4";
 function Presentation() {
   return (
     <>
@@ -152,7 +159,21 @@ function Presentation() {
       >
         <div id="ekipler">
           <h2 className="label">Mehter</h2>
-          <img src={mehter2} height={300} width={300}></img>
+          <h3 style={{ color: "#344767" }}>Fotoğraflar</h3>
+          <div id="mehteresim">
+            <img className="resim" src={mehter2} height={350} width={350}></img>
+            <img className="resim" src={mehterKonser} height={350} width={350}></img>
+            <img className="resim" src={mehterKonser3} height={350} width={350}></img>
+            <img className="resim" src={mehterKonser4} height={350} width={350}></img>
+            <img className="resim" src={mehterKonser5} height={350} width={350}></img>
+            <img className="resim" src={mehterKonser6} height={350} width={350}></img>
+            <img className="resim" src={mehterKonser7} height={350} width={350}></img>
+            <img className="resim" src={mehterKonser8} height={350} width={350}></img>
+          </div>
+          <div id="mehtervideo">
+            <h3 style={{ color: "#344767" }}>Videolar</h3>
+            <video className="resim" src={MehterVideo1} width="640" height="360" controls></video>
+          </div>
         </div>
       </Card>
 
