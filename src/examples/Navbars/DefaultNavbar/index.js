@@ -81,13 +81,14 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }) => (
+  const renderNavbarItems = routes.map(({ name, icon, href, route, collapse, onClick }) => (
     <DefaultNavbarDropdown
       key={name}
       name={name}
       icon={icon}
       href={href}
       route={route}
+      onClick={onClick}
       collapse={Boolean(collapse)}
       onMouseEnter={({ currentTarget }) => {
         if (collapse) {
@@ -143,6 +144,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
                     {col.collapse.map((item) => (
                       <MKTypography
                         key={item.name}
+                        onClick={item.onClick}
                         component={item.route ? Link : MuiLink}
                         to={item.route ? item.route : ""}
                         href={item.href ? item.href : (e) => e.preventDefault()}

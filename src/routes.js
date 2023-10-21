@@ -68,6 +68,24 @@ import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography"; */
 
+const navigatePage = function (targetId) {
+  const targetSection = document.getElementById(targetId);
+  console.log(targetSection);
+
+  if (targetSection) {
+    const position = targetSection.getBoundingClientRect();
+    const topValue = position.top + window.scrollY;
+
+    // Hedef bölüme kaydırma işlemi
+    window.scrollTo({
+      top: topValue - 100,
+      behavior: "smooth", // Daha yumuşak bir kaydırma efekti için
+    });
+  } else {
+    alert("İstenilen yer bulunamadı");
+  }
+};
+
 const routes = [
   {
     name: "Ekipler",
@@ -80,13 +98,19 @@ const routes = [
         collapse: [
           {
             name: "Fotoğraf",
-            route: "/pages/landing-pages/about-us",
-            component: <AboutUs />,
+            onClick: function navigate() {
+              navigatePage("ekipler");
+            },
+            //route: "/pages/landing-pages/about-us",
+            //component: <AboutUs />,
           },
           {
             name: "Video",
-            route: "/pages/landing-pages/contact-us",
-            component: <ContactUs />,
+            onClick: function navigate() {
+              navigatePage("ekipler");
+            },
+            /* route: "/pages/landing-pages/contact-us",
+            component: <ContactUs />, */
           },
         ],
       },
@@ -95,8 +119,11 @@ const routes = [
         collapse: [
           {
             name: "Fotoğraf",
-            route: "/pages/landing-pages/about-us",
-            component: <AboutUs />,
+            onClick: function navigate() {
+              navigatePage("ekipler");
+            },
+            /* route: "/pages/landing-pages/about-us",
+            component: <AboutUs />, */
           },
           {
             name: "Video",
@@ -127,16 +154,22 @@ const routes = [
     icon: <Icon>dashboard</Icon>,
     columns: 1,
     rowsPerColumn: 2,
-    route: "/pages/landing-pages/contact-us",
-    component: <ContactUs />,
+    onClick: function navigate() {
+      navigatePage("hakkimizda");
+    },
+    //route: "/pages/landing-pages/contact-us",
+    //component: <ContactUs />,
   },
   {
     name: "İletişim",
     icon: <Icon>dashboard</Icon>,
     columns: 1,
     rowsPerColumn: 2,
-    route: "/pages/landing-pages/contact-us",
-    component: <ContactUs />,
+    onClick: function navigate() {
+      navigatePage("ekipler");
+    },
+    //route: "/pages/landing-pages/contact-us",
+    //component: <ContactUs />,
   },
   /* {
     name: "pages",
